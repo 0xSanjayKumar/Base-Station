@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Station</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main_heading">
+        <img src="logo.png" alt="Logo" class="logo">
+    </div>
+
+    <div class="container">
+        <div class="help-box">
+            <div class="help-box-header">
+                <h3>How to Use This Base Station</h3>
+                <button class="help-box-toggle" id="helpToggle">▼</button>
+            </div>
+            <div class="help-box-content" id="helpContent">
+                <div class="help-section">
+                    <h4>GPS Coordinates</h4>
+                    <p>Enter the latitude, longitude, and altitude values. Set accuracy parameters and time as needed. Click 'Update' to apply or 'Stop' to cease updates.</p>
+                </div>
+                
+                <div class="help-section">
+                    <h4>Automatic Mode</h4>
+                    <p>For quick setup, use 'Auto Survey' to automatically collect position data or 'Auto Fix' to establish a fixed position based on known coordinates.</p>
+                </div>
+                
+                <div class="help-section">
+                    <h4>Manual Mode Survey</h4>
+                    <p>Use these controls for custom survey operations:</p>
+                    <ul>
+                        <li><strong>Reset:</strong> Clear all survey data</li>
+                        <li><strong>Port:</strong> Configure connection port</li>
+                        <li><strong>MSG-Enable:</strong> Toggle NMEA message output</li>
+                        <li><strong>Survey-Stat:</strong> View current survey statistics</li>
+                        <li><strong>Surveying:</strong> Begin manual survey process</li>
+                        <li><strong>Broadcast:</strong> Share position data</li>
+                        <li><strong>Status:</strong> Check system status</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h4>Manual Mode Fix</h4>
+                    <p>For precise positioning control, use these options to manually set up fixed-position operation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <h2>GPS Coordinates</h2>
+        </div>
+        
+        <div class="inputs_gps">
+            <div class="input">
+                <input type="number" id="latitude" placeholder="Latitude (in meters)" step="0.000001">
+            </div>
+            <div class="input">
+                <input type="number" id="longitude" placeholder="Longitude (in meters)" step="0.000001">
+            </div>
+            <div class="input">
+                <input type="number" id="altitude" placeholder="Altitude (in meters)" step="0.1">
+            </div>
+        </div>
+                
+        <div class="inputs_accuracy">
+            <div class="input">
+                <input type="number" id="accuracy" placeholder="Accuracy (in meters)" step="0.1">
+            </div>
+            <div class="input">
+                <input type="number" id="time" placeholder="Time (in seconds)" step="0.1">
+            </div>
+            <button id="updateButton" class="input_buttons">Update</button>
+            <button id="stopButton" class="input_buttons">Stop</button>
+        </div>
+
+        <div class="header">
+            <h2>Automatic Mode</h2>
+        </div>
+
+        <div class="Automatic_Mode">
+            <button id="autoSurveyButton" class="control-button">Auto Survey</button>
+            <button id="autoFixButton" class="control-button">Auto Fix</button>
+        </div>
+        
+        <div class="header">
+            <h2>Manual Mode Survey</h2>
+        </div>
+        
+        <div class="Manual_Mode_Survey">
+            <button id="resetButton" class="control-button">Reset</button>
+            <button id="portButton" class="control-button">Port</button>
+            <button id="msgEnableButton" class="control-button">MSG-Enable</button>
+            <button id="surveyStatButton" class="control-button">Survey-Stat</button>
+            <button id="surveyingButton" class="control-button">Surveying</button>
+            <button id="broadcastButton" class="control-button">Broadcast</button>
+            <button id="statusButton" class="control-button">Status</button>
+        </div>
+        
+        <div class="header">
+            <h2>Manual Mode Fix</h2>
+        </div>
+
+        <div class="Manual_Mode_Fix">
+            <button id="resetButtonFix" class="control-button">Reset</button>
+            <button id="portButtonFix" class="control-button">Port</button>
+            <button id="msgEnableButtonFix" class="control-button">MSG-Enable</button>
+            <button id="fixModeButtonFix" class="control-button">Fix-Mode</button>
+            <button id="broadcastButtonFix" class="control-button">Broadcast</button>
+            <button id="statusButtonFix" class="control-button">Status</button>
+        </div>
+
+        <div class="status-indicator">
+            <div>
+                <span class="indicator" id="connectionIndicator"></span>
+                Connection
+            </div>
+            <div>
+                <span class="indicator" id="gpsIndicator"></span>
+                GPS Signal
+            </div>
+            <div>
+                <span class="indicator" id="dataIndicator"></span>
+                Data Transfer
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
